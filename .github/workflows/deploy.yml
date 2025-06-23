@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Tambahkan batas waktu agar tidak infinite
 
     steps:
     - name: Checkout Repo
@@ -15,8 +16,19 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
-    - name: Build Docker Image
-      run: docker build -t flask-ci-app .
+    - name: Build and Run with docker-compose
+      run: |
+        docker compose up -d --build
+        echo "Waiting for Flask app to be ready..."
+        for i in {1..10}; do
+          if curl --fail http://localhost:5000; then
+            echo "Flask is up!"
+            break
+          else
+            echo "Flask not ready, retrying in 5s..."
+            sleep 5
+          fi
+        done
 
-    - name: Run Flask App (test)
-      run: docker run --rm flask-ci-app python app.py
+    - name: Stop containers
+      run: docker compose down
