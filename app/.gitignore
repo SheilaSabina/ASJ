@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+*.sqlite3
+
+# Env file
+.env
+
+# VSCode
+.vscode/
+
+# Docker
+*.log
+*.pid
+
+# Mac & OS generated
+.DS_Store
+Thumbs.db

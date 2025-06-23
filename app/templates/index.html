@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Rekomendasi Tempat Makan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='rekomendasi.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
 
@@ -53,4 +53,12 @@
     <h2>Tambah Tempat Makan</h2>
     <input type="text" name="name" placeholder="Nama Tempat" required>
     <input type="text" name="location" placeholder="Lokasi" required>
-    <input type="text" name="food_type" placeholder="Jenis Makanan (Bakso, Sate...)"_
+    <input type="text" name="food_type" placeholder="Jenis Makanan (Bakso, Sate...)" required>
+    <input type="number" name="rating" placeholder="Rating 1-5" min="1" max="5" required>
+    <button type="submit">➕ Tambah</button>
+  </form>
+
+  <a href="/dashboard" class="back-button">⬅ Kembali ke Dashboard</a>
+
+</body>
+</html>
