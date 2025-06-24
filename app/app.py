@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, flash
 import psycopg2
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
 # Secret key di sini
@@ -14,7 +18,7 @@ DB_PASS = os.getenv("DB_PASS")
 # Fungsi koneksi ke PostgreSQL
 def get_db_connection():
     conn = psycopg2.connect(
-        host='db',  # sesuai dengan service name di docker-compose
+        host='db',
         database=DB_NAME,
         user=DB_USER,
         password=DB_PASS
@@ -111,4 +115,4 @@ def edit_place(id):
 
 # Jalankan aplikasi Flask di dalam Docker container
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
