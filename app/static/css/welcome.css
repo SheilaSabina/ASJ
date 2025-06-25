@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('/static/welcome.jpg') no-repeat center center fixed;
+  background: url('/static/image/welcome.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;

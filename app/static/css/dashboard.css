@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('/static/backgroundfood.jpg') no-repeat center center fixed;
+  background: url('/static/image/backgroundfood.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #2c3e50;
   height: 100vh;
