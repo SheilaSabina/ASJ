@@ -25,8 +25,6 @@ def get_db_connection():
     )
     return conn
 
-# 🔸 ROUTES 🔸
-
 # Welcome Page
 @app.route('/')
 def welcome():
